@@ -31,5 +31,3 @@ console.log('Tasks:');
 tasks.forEach((task, index) => {
   console.log(`${index + 1}. [${task.completed ? 'x' : ' '}] ${task.description}`);
 });
-
-//return

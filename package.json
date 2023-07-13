@@ -1,0 +1,27 @@
+{
+  "name": "todolist2",
+  "version": "1.0.0",
+  "description": "This is a toDoList made with hexagonal architecture and vertical slicing.",
+  "main": "app,js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OllinDesigns/toDoList.git"
+  },
+  "keywords": [
+    "to",
+    "do",
+    "list"
+  ],
+  "author": "OllinDesigns",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OllinDesigns/toDoList/issues"
+  },
+  "homepage": "https://github.com/OllinDesigns/toDoList#readme"
+}
