@@ -1,4 +1,4 @@
-import { Task } from '../../domain/entities/Task';
+import { Task } from '../../core/domain/entities/Task';
 
 export class TaskRepository {
     private tasks: Task[] = [];
