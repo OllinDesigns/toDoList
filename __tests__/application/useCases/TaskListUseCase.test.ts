@@ -2,7 +2,7 @@ import { Task } from '../../../src/core/domain/entities/Task';
 import { TaskRepository } from '../../../src/infrastructure/repositories/TaskRepository';
 import { TaskListUseCase } from '../../../src/core/domain/use-cases/taskListUseCase';
 
-    describe('TaskListUseCase', () => {
+  describe('TaskListUseCase', () => {
   let taskRepository: TaskRepository;
   let taskListUseCase: TaskListUseCase;
 
