@@ -1,31 +1,18 @@
-// app ts proposed from chat gpt
-
 import express from 'express';
-import { TaskListUseCase } from './src/core/domain/use-cases/taskListUseCase'
-import { TaskRepository } from './src/infrastructure/repositories/TaskRepository';
-import { TaskList } from './src/core/domain/entities/TaskList'
+import toDoController from './src/application/controllers/toDoController';
 
-// Create an instance of Express
 const app = express();
 
-// Initialize the task list use case
-const taskRepository = new TaskRepository(); // Adjust this based on your actual repository implementation
-const taskListUseCase = new TaskListUseCase(taskRepository);
+// set up template engine
+app.set('view engine', 'ejs');
 
-// Define API routes
-app.get('/tasks', (req, res) => {
-  const tasks = taskListUseCase.getTasks();
-  res.json(tasks);
-});
+// static files
+app.use(express.static('public'));
 
-// show something on screen
-app.get('/', (req, res) => {
-    res.send('Hello, Gurrus!');
-  });
+// fire controllers
+toDoController(app);
 
-
-// Start the server
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+// listen to port
+app.listen(3000, () => {
+  console.log('Gurrus says hello from port 3000');
 });
