@@ -1,18 +1,26 @@
-import express from 'express';
-import toDoController from './src/application/controllers/toDoController';
+import express from "express";
+import path from "path";
+import toDoController from "./src/application/controllers/toDoController";
+import bodyParser from "body-parser";
 
 const app = express();
+const rootDir = path.join(__dirname, ".."); // Get the root directory
 
-// set up template engine
-app.set('view engine', 'ejs');
+// ensure that the server is able to parse the request body correctly
+app.use(bodyParser.json());
 
-// static files
-app.use(express.static('public'));
+// Static files
+app.use(express.static(path.join(rootDir, "public")));
 
-// fire controllers
+// Fire controllers
 toDoController(app);
 
-// listen to port
+// Route to serve index.html
+app.get("/index.html", (req, res) => {
+  res.sendFile(path.join(rootDir, "index.html"));
+});
+
+// Listen to port
 app.listen(3000, () => {
-  console.log('Gurrus says hello from port 3000');
+  console.log("Gurrus says hello from port 3000");
 });

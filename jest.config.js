@@ -5,7 +5,21 @@ module.exports = {
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   coverageDirectory: 'coverage',
   collectCoverageFrom: ['src/**/*.ts'],
+  testMatch: ["**/__tests__/**/*.test.ts"],
+  setupFilesAfterEnv: ['./jest.setup.js'], // Add this line to include the setup file
 };
+
+
+// module.exports = {
+//   preset: 'ts-jest',
+//   testEnvironment: 'node',
+//   testMatch: ['**/__tests__/**/*.ts'],
+//   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+//   coverageDirectory: 'coverage',
+//   collectCoverageFrom: ['src/**/*.ts'],
+//   testMatch: ["**/__tests__/**/*.test.ts"],
+//   setupFilesAfterEnv: ['./jest.setup.js'],
+// };
 
 
 // older configuration for nodejs environment
