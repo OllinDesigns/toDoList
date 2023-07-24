@@ -8,7 +8,9 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -26,6 +28,7 @@
   },
   "homepage": "https://github.com/OllinDesigns/toDoList#readme",
   "devDependencies": {
+    "@babel/preset-typescript": "^7.22.5",
     "@types/express": "^4.17.17",
     "@types/inquirer": "^9.0.3",
     "@types/jest": "^29.5.3",

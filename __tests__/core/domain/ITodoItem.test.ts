@@ -1,37 +1,45 @@
-import { ITodoItem } from '../../../src/application/dtos/IToDoItem';
-import mongoose from 'mongoose';
+import { ITodoItem } from "../../../src/application/dtos/IToDoItem";
+import mongoose from "mongoose";
 
-
-describe('ITodoItem', () => {
-  test('should have _id, item, and completed properties', () => {
-    // Arrange & Act: No need to create an instance since it's an interface
-    // We just need to check the type
-
-    // Assert
+describe("The ItodoItem interface has the following data types: id = mongoose.Types.ObjectId, item = string and completed = boolean.", () => {
+  test("Interface should have _id, item, and completed properties", () => {
     const item: ITodoItem = {
       _id: new mongoose.Types.ObjectId(),
-      item: 'Buy groceries',
+      item: "Buy groceries",
       completed: false,
     };
     expect(item._id).toBeInstanceOf(mongoose.Types.ObjectId);
-    expect(typeof item.item).toBe('string');
-    expect(typeof item.completed).toBe('boolean');
+    expect(typeof item.item).toBe("string");
+    expect(typeof item.completed).toBe("boolean");
   });
 
-  test('should correctly infer types', () => {
+  test("Interface should correctly infer types", () => {
     const item: ITodoItem = {
       _id: new mongoose.Types.ObjectId(),
-      item: 'Buy groceries',
+      item: "Buy groceries",
       completed: false,
     };
 
-    // TypeScript should not throw any error since the types match the interface definition
     expect(item._id).toBeDefined();
-    expect(typeof item.item).toBe('string');
-    expect(typeof item.completed).toBe('boolean');
+    expect(typeof item.item).toBe("string");
+    expect(typeof item.completed).toBe("boolean");
   });
 });
 
-// describe('ITodoItem Interface', () => {
-  
-// });
+describe("Test cases of the todo item with a mock function using the ITodoItem interface", () => {
+  function createMockTodoItem(): ITodoItem {
+    return {
+      _id: new mongoose.Types.ObjectId(),
+      item: "Mock Todo Item",
+      completed: false,
+    };
+  }
+
+  test("test the ITodoItem interface with mock function", () => {
+    const mockTodoItem = createMockTodoItem();
+
+    expect(mockTodoItem._id).toBeInstanceOf(mongoose.Types.ObjectId);
+    expect(typeof mockTodoItem.item).toBe("string");
+    expect(typeof mockTodoItem.completed).toBe("boolean");
+  });
+});

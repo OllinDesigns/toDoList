@@ -1,13 +1,26 @@
 module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'node',
-  testMatch: ['**/__tests__/**/*.ts'],
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
-  coverageDirectory: 'coverage',
-  collectCoverageFrom: ['src/**/*.ts'],
-  testMatch: ["**/__tests__/**/*.test.ts"],
-  setupFilesAfterEnv: ['./jest.setup.js'], // Add this line to include the setup file
+  roots: ['<rootDir>/src', '<rootDir>/__tests__'],
+  transform: {
+    '^.+\\.tsx?$': 'ts-jest',
+  },
+  moduleNameMapper: {
+    '@/(.*)': '<rootDir>/src/$1', // Adjust the src folder alias as needed
+  },
 };
+
+
+// module.exports = {
+//   preset: 'ts-jest',
+//   testEnvironment: 'node',
+//   testMatch: ['**/__tests__/**/*.ts'],
+//   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+//   coverageDirectory: 'coverage',
+//   collectCoverageFrom: ['src/**/*.ts'],
+//   testMatch: ["**/__tests__/**/*.test.ts"],
+//   setupFilesAfterEnv: ['./jest.setup.js'], // Add this line to include the setup file
+// };
 
 
 // module.exports = {
