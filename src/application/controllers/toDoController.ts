@@ -1,4 +1,4 @@
-import { Request, Response } from "express";
+import { Express, Request, Response } from "express";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import { ITodoItem } from "../dtos/IToDoItem";
@@ -17,7 +17,7 @@ mongoose
     console.error("Error connecting to MongoDB:", err);
   });
 
-export default function toDoController(app: any) {
+export default function toDoController(app: Express) {
   app.get("/todo", async (req: Request, res: Response) => {
     try {
       const data = await Todo.find({});
@@ -88,3 +88,5 @@ export default function toDoController(app: any) {
     }
   });
 }
+
+
