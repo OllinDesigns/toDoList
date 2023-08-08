@@ -78,65 +78,6 @@ to this project are welcome! If you find any issues or want to add new features,
 This project is licensed under the MIT License.
 
 ## Folder Structure
-.
-├── app.ts
-├── dist
-│   ├── app.js
-│   └── src
-│       ├── application
-│       │   ├── controllers
-│       │   │   └── toDoController.js
-│       │   └── dtos
-│       │       ├── IToDoItem.js
-│       │       └── Todo.js
-│       ├── core
-│       │   └── domain
-│       │       ├── entities
-│       │       └── use-cases
-│       └── infrastructure
-│           ├── db.js
-│           └── repositories
-├── index.html
-├── jest.config.js
-├── jest.setup.js
-├── package.json
-├── package-lock.json
-├── public
-│   ├── ollinmastermedicrepnglow.png
-│   └── styles.css
-├── README.md
-├── src
-│   ├── application
-│   │   ├── controllers
-│   │   │   └── toDoController.ts
-│   │   └── dtos
-│   │       ├── IToDoItem.ts
-│   │       └── Todo.ts
-│   ├── core
-│   └── infrastructure
-│       └── db.ts
-├── __tests__
-│   ├── application
-│   │   ├── controllers
-│   │   │   ├── deleteReq.test.ts
-│   │   │   ├── getReq.test.ts
-│   │   │   ├── postReq.test.ts
-│   │   │   └── putReq.test.ts
-│   │   ├── dtos
-│   │   │   ├── ITodoItem.test.ts
-│   │   │   └── todo.test.ts
-│   │   └── useCases
-│   ├── connect.test.ts
-│   ├── core
-│   │   └── domain
-│   │       └── entities
-│   ├── infrastructure
-│   │   └── repositories
-│   ├── todoGet.test.ts
-│   └── todoPost.test.ts
-└── tsconfig.json
-
-
 
 Happy ToDoListing! 🚀
 
