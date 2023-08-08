@@ -2,27 +2,25 @@ import express from "express";
 import path from "path";
 import toDoController from "./src/application/controllers/toDoController";
 import bodyParser from "body-parser";
+import { db } from "./src/infrastructure/db";
 
 const app = express();
-const rootDir = path.join(__dirname, ".."); // Get the root directory
+const rootDir = path.join(__dirname, "..");
 
-// ensure that the server is able to parse the request body correctly
 app.use(bodyParser.json());
 
-// Static files
 app.use(express.static(path.join(rootDir, "public")));
 
-// Fire controllers
+db();
+
 toDoController(app);
 
-// Route to serve index.html
 app.get("/index.html", (req, res) => {
   res.sendFile(path.join(rootDir, "index.html"));
 });
 
-// Listen to port
 app.listen(3000, () => {
   console.log("Gurrus says hello from port 3000");
 });
 
-export default app; // Export the app instance
+export default app;

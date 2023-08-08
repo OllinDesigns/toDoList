@@ -13,17 +13,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const body_parser_1 = __importDefault(require("body-parser"));
-const mongoose_1 = __importDefault(require("mongoose"));
 const Todo_1 = require("../dtos/Todo");
 const urlencodedParser = body_parser_1.default.urlencoded({ extended: false });
-mongoose_1.default
-    .connect("mongodb+srv://ollinDesigns:claveParaAtlas@cluster0.1b2ylxi.mongodb.net/todolist-db?retryWrites=true&w=majority")
-    .then(() => {
-    console.log("Connected to MongoDB");
-})
-    .catch((err) => {
-    console.error("Error connecting to MongoDB:", err);
-});
 function toDoController(app) {
     app.get("/todo", (req, res) => __awaiter(this, void 0, void 0, function* () {
         try {
@@ -37,6 +28,9 @@ function toDoController(app) {
     }));
     app.post("/todo", urlencodedParser, (req, res) => __awaiter(this, void 0, void 0, function* () {
         try {
+            if (!req.body.item) {
+                return res.status(400).send("Item field is required");
+            }
             const newTodo = new Todo_1.Todo({
                 item: req.body.item,
                 completed: false,

@@ -7,10 +7,12 @@ const express_1 = __importDefault(require("express"));
 const path_1 = __importDefault(require("path"));
 const toDoController_1 = __importDefault(require("./src/application/controllers/toDoController"));
 const body_parser_1 = __importDefault(require("body-parser"));
+const db_1 = require("./src/infrastructure/db");
 const app = (0, express_1.default)();
 const rootDir = path_1.default.join(__dirname, "..");
 app.use(body_parser_1.default.json());
 app.use(express_1.default.static(path_1.default.join(rootDir, "public")));
+(0, db_1.db)();
 (0, toDoController_1.default)(app);
 app.get("/index.html", (req, res) => {
     res.sendFile(path_1.default.join(rootDir, "index.html"));

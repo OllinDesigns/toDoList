@@ -1,21 +1,9 @@
 import { Express, Request, Response } from "express";
 import bodyParser from "body-parser";
-import mongoose from "mongoose";
 import { ITodoItem } from "../dtos/IToDoItem";
 import { Todo } from "../dtos/Todo";
 
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
-
-mongoose
-  .connect(
-    "mongodb+srv://ollinDesigns:claveParaAtlas@cluster0.1b2ylxi.mongodb.net/todolist-db?retryWrites=true&w=majority"
-  )
-  .then(() => {
-    console.log("Connected to MongoDB");
-  })
-  .catch((err) => {
-    console.error("Error connecting to MongoDB:", err);
-  });
 
 export default function toDoController(app: Express) {
   app.get("/todo", async (req: Request, res: Response) => {
@@ -30,6 +18,10 @@ export default function toDoController(app: Express) {
 
   app.post("/todo", urlencodedParser, async (req: Request, res: Response) => {
     try {
+      if (!req.body.item) {
+        return res.status(400).send("Item field is required");
+      }
+
       const newTodo = new Todo({
         item: req.body.item,
         completed: false,
@@ -88,5 +80,3 @@ export default function toDoController(app: Express) {
     }
   });
 }
-
-
