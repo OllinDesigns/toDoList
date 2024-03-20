@@ -1,4 +1,3 @@
-// un comentario
 import express from "express";
 import path from "path";
 import toDoController from "./src/application/controllers/toDoController";
