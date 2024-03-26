@@ -32,6 +32,11 @@
         <input type="text" name="item" placeholder="Add new item" required />
         <button type="submit">Add Item</button>
       </form>
+      
+      <!-- <form hx-post="/todo" hx-target="#todo-list" onsubmit="return false;">
+        <input type="text" name="item" placeholder="Add new item" required />
+        <button type="submit">Add Item</button>
+      </form>  -->
 
       <p>check the item once the task is completed</p>
       <ul id="todo-list" hx-get="/todo">
@@ -71,22 +76,44 @@
       }
 
       // Function to update the todo list after successful form submission
-      function updateTodoList() {
-        const list = document.getElementById("todo-list");
-        fetch("/todo")
-          .then((response) => response.json())
-          .then((data) => {
-            list.innerHTML = ""; // Clear the existing list
 
-            // Reverse the order of the data array to show the last added items first
-            data.reverse().forEach((task) => {
-              const listItem = createTaskItem(task);
-              list.appendChild(listItem);
-            });
-            clearForm();
-          })
-          .catch((error) => console.error("Error fetching todo list:", error));
-      }
+// Function to update the todo list after successful form submission
+function updateTodoList() {
+  const list = document.getElementById("todo-list");
+  fetch("/todo")
+    .then((response) => response.json())
+    .then((data) => {
+      list.innerHTML = ""; // Clear the existing list
+
+      // Reverse the order of the data array to show the last added items first
+      data.reverse().forEach((task) => {
+        const listItem = createTaskItem(task);
+        list.appendChild(listItem);
+      });
+      clearForm();
+    })
+    .catch((error) => console.error("Error fetching todo list:", error));
+}
+
+
+
+
+      // function updateTodoList() {
+      //   const list = document.getElementById("todo-list");
+      //   fetch("/todo")
+      //     .then((response) => response.json())
+      //     .then((data) => {
+      //       list.innerHTML = ""; // Clear the existing list
+
+      //       // Reverse the order of the data array to show the last added items first
+      //       data.reverse().forEach((task) => {
+      //         const listItem = createTaskItem(task);
+      //         list.appendChild(listItem);
+      //       });
+      //       clearForm();
+      //     })
+      //     .catch((error) => console.error("Error fetching todo list:", error));
+      // }
 
       // Front-end code to delete a task item
       function deleteItem(itemId) {

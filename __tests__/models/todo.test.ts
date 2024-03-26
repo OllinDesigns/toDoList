@@ -1,4 +1,4 @@
-import { Todo } from "../../../src/application/dtos/Todo";
+import { Todo } from "../../src/models/Todo";
 
 describe("Testing the Todo Model", () => {
   it("should create a new todo item with default 'completed' value", () => {

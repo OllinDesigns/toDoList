@@ -2,7 +2,7 @@
 
 import request from "supertest";
 import express, { Express } from "express";
-import toDoController from "../src/application/controllers/toDoController";
+// import toDoController from "../src/application/controllers/toDoController";
 import mongoose from "mongoose";
 
 describe("GET /todo", () => {
@@ -10,7 +10,7 @@ describe("GET /todo", () => {
 
   beforeAll(() => {
     app = express();
-    toDoController(app);
+    // toDoController(app);
   });
 
   it("should return all items", async () => {

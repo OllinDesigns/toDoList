@@ -1,4 +1,4 @@
-import { ITodoItem } from "../../../src/application/dtos/IToDoItem";
+import { ITodoItem } from "../../src/models/IToDoItem";
 import mongoose from "mongoose";
 
 describe("The ItodoItem interface has the following data types: id = mongoose.Types.ObjectId, item = string and completed = boolean.", () => {
