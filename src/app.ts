@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(rootDir, "public")));
 
 // Handle API routes
-app.use("/todo", todoRouter);
+app.use("/", todoRouter);
 
 // Handle all other routes by serving the index.html file
 app.get("*", (req, res) => {
