@@ -6,16 +6,21 @@ import todoRouter from "./routes/todoRouter";
 
 const app = express();
 const rootDir = path.join(__dirname, "..");
+// React
+const frontendDir = path.join(rootDir, "frontend", "build");
 
 app.use(bodyParser.json());
 
-// Serve static files from the 'public' directory
+// Serve static files from the 'public' directory SIN REACT
 app.use(express.static(path.join(rootDir, "public")));
+
+// Serve static files from the React build directory
+app.use(express.static(frontendDir));
 
 // Handle API routes
 app.use("/", todoRouter);
 
-// Handle all other routes by serving the index.html file
+// Handle all other routes by serving the index.html file SIN REACT
 app.get("*", (req, res) => {
   res.sendFile(path.join(rootDir, "index.html"));
 });
@@ -29,36 +34,3 @@ app.listen(PORT, () => {
 });
 
 export default app;
-
-
-
-// funciona
-// import express from "express";
-// import path from "path";
-// // import toDoController from "./controllers/toDoController";
-// import bodyParser from "body-parser";
-// import { db } from "./infrastructure/db";
-// import todoRouter from "./routes/todoRouter"
-
-// const app = express();
-// const rootDir = path.join(__dirname, "..");
-
-// app.use(bodyParser.json());
-
-// app.use(express.static(path.join(rootDir, "public")));
-
-// db();
-
-// // toDoController(app);
-
-// app.use("/todo", todoRouter);
-
-// app.get("/index.html", (req, res) => {
-//   res.sendFile(path.join(rootDir, "index.html"));
-// });
-
-// app.listen(3000, () => {
-//   console.log("Gurrus says hello from port 3000");
-// });
-
-// export default app;
