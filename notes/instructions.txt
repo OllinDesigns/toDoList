@@ -1,6 +1,6 @@
-1. folder structure
-borrar nodemodules de client
-
-2. test
-2. database
+2. database, mongodb node.js driver
+route todo
 3. react
+
+
+tree -I 'node_modules|notes|dist'
