@@ -1,0 +1,6 @@
+1. folder structure
+borrar nodemodules de client
+
+2. test
+2. database
+3. react
