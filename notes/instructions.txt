@@ -1,4 +1,7 @@
 3. react
 to do component
 
+#634fb9; 
+#42357b;
+
 tree -I 'node_modules|notes|dist|__tests__|views'

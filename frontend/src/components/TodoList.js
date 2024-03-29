@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import './TodoList.css';
 
 function TodoList() {
   const [todos, setTodos] = useState([]);
@@ -11,7 +12,7 @@ function TodoList() {
 
   const fetchTodos = async () => {
     try {
-      const response = await axios.get('/todo/'); // Adjusted API endpoint for fetching todos
+      const response = await axios.get('/todo/'); 
       setTodos(response.data);
     } catch (error) {
       console.error('Error fetching todos:', error);
@@ -30,7 +31,7 @@ function TodoList() {
 
   const handleDeleteTodo = async (id) => {
     try {
-      await axios.delete(`/todo/${id}`); // Adjusted API endpoint for deleting a todo
+      await axios.delete(`/todo/${id}`); 
       fetchTodos();
     } catch (error) {
       console.error('Error deleting todo:', error);
@@ -39,7 +40,7 @@ function TodoList() {
 
   const handleToggleComplete = async (id, completed) => {
     try {
-      await axios.put(`/todo/${id}`, { completed }); // Adjusted API endpoint for updating a todo
+      await axios.put(`/todo/${id}`, { completed }); 
       fetchTodos();
     } catch (error) {
       console.error('Error updating todo:', error);
