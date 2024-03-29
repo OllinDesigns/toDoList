@@ -1,4 +1,4 @@
 3. react
+to do component
 
-
-tree -I 'node_modules|notes|dist'
+tree -I 'node_modules|notes|dist|__tests__|views'
