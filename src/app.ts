@@ -6,6 +6,7 @@ import todoRouter from "./routes/todoRouter";
 
 const app = express();
 const rootDir = path.join(__dirname, "..");
+
 // React
 const frontendDir = path.join(rootDir, "frontend", "build");
 

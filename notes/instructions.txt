@@ -5,3 +5,5 @@ to do component
 #42357b;
 
 tree -I 'node_modules|notes|dist|__tests__|views'
+
+cambiar imports en todo controller

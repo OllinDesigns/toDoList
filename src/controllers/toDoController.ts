@@ -1,7 +1,6 @@
-import { Express, Request, Response } from "express";
+import { Request, Response } from "express";
 import bodyParser from "body-parser";
-import { ITodoItem } from "../models/IToDoItem";
-import { Todo } from "../models/Todo";
+import { ITodoItem, Todo } from "../models//taskModel";
 
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
 
