@@ -1,4 +1,4 @@
-import { Todo } from "../../src/models/Todo";
+import { Todo } from "../../src/models/taskModel";
 
 describe("Testing the Todo Model", () => {
   it("should create a new todo item with default 'completed' value", () => {
@@ -20,3 +20,4 @@ describe("Testing the Todo Model", () => {
     expect(newTodo.completed).toBe(false);
   });
 });
+

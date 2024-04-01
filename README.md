@@ -1,6 +1,18 @@
-# ToDoList - Node.js Project
+# ToDoList - RESTful API
 
-This project is a ToDoList application built using Node.js, following the principles of hexagonal architecture and vertical slicing. It provides a simple web interface for managing tasks. The app connects to MongoDB.
+The ToDoList app is a RESTful web application following the Model-View-Controller (MVC) architecture. The backend, powered by Node.js and Express.js, offers a RESTful API for managing tasks. It utilizes MongoDB as the database for storing task data, with models defining the schema and structure of the data.
+
+![Alt text](src/views//todoapp.png)
+
+The backend controllers handle incoming requests, interacting with the models to perform CRUD (Create, Read, Update, Delete) operations on tasks. The API endpoints are designed to adhere to RESTful principles, providing predictable and consistent interfaces for client applications.
+
+On the frontend, the app is built with React.js to create a dynamic and interactive user interface. Components such as Greeting and TodoList are responsible for rendering views and managing user interactions. React Router is used for client-side routing, enabling navigation between different views without full page reloads.
+
+The app is tested using Jest. Test suites ensure that the API endpoints behave correctly, database operations are performed accurately.
+
+## for GitHub
+
+The ToDoList app is a simple task management application built with Node.js, Express.js, and React.js. It allows users to create, view, update, and delete tasks. The backend of the app is powered by Express.js, providing RESTful API endpoints for managing tasks stored in a MongoDB database. On the frontend, React.js is used to create an interactive user interface where users can add new tasks, mark tasks as completed, and delete tasks. The app features responsive design, dark mode, and a clean user interface for a seamless task management experience.
 
 ## Getting Started
 

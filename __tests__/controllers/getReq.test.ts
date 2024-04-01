@@ -1,4 +1,4 @@
-import { Todo } from "../../src/models/Todo";
+import { Todo } from "../../src/models/taskModel";
 
 describe("Read test. This tests the simulation of a get request and the find method through a mock function. It tests if the app would read the data from the database", () => {
   it("Should return mock data when calling Todo.find()", async () => {

@@ -1,4 +1,4 @@
-import { Todo } from "../../src/models/Todo";
+import { Todo } from "../../src/models/taskModel";
 
 describe("Update test. This tests the simulation of the put request and the findByIdAndUpdate method through a mock function. ", () => {
   test("It tests if the app would update an item when calling Todo.findByIdAndUpdate()", async () => {
