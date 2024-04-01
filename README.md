@@ -43,7 +43,7 @@ This will start the application with nodemon, enabling automatic server restarts
 
 You should see the messages "Server is running on port 3000" and "Connected to MongoDB" if the application is initialized correctly.
 
-5. Open your web browser and visit http://localhost:3000/ to access the front-end of the application.
+6. Open your web browser and visit http://localhost:3000/ to access the front-end of the application.
 
 
 <!-- ## Key Components -->
