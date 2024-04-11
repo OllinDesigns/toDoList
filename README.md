@@ -1,6 +1,14 @@
-# ToDoList - Node.js Project
+# ToDoList - RESTful API
 
-This project is a ToDoList application built using Node.js, following the principles of hexagonal architecture and vertical slicing. It provides a simple web interface for managing tasks. The app connects to MongoDB.
+The ToDoList app is a RESTful web application following the Model-View-Controller (MVC) architecture. The backend, powered by Node.js and Express.js, offers a RESTful API for managing tasks. It utilizes MongoDB as the database for storing task data, with models defining the schema and structure of the data.
+
+![Alt text](src/views//todoapp.png)
+
+The backend controllers handle incoming requests, interacting with the models to perform CRUD (Create, Read, Update, Delete) operations on tasks. The API endpoints are designed to adhere to RESTful principles, providing predictable and consistent interfaces for client applications.
+
+On the frontend, the app is built with React.js to create a dynamic and interactive user interface. Components such as Greeting and TodoList are responsible for rendering views and managing user interactions. React Router is used for client-side routing, enabling navigation between different views without full page reloads.
+
+The app is tested using Jest. Test suites ensure that the API endpoints behave correctly, database operations are performed accurately.
 
 ## Getting Started
 
@@ -25,16 +33,21 @@ To get started with the application, follow these steps:
    ```bash
    npm start
 
-You should see the messages "Gurrus says hello from port 3000" and "Connected to MongoDB" if the application is initialized correctly.
-
-5. Open your web browser and visit http://localhost:3000/index.html to access the front-end of the application.
+5. Additionally, you can run the application using nodemon by executing the following command:
 
 
-## Key Components
+   ```bash
+   npm run dev
 
-    - Todo.ts: This TypeScript model defines the structure of a ToDo item, representing data stored in the database.
+This will start the application with nodemon, enabling automatic server restarts upon file changes, facilitating the development process.
 
-    - ITodoItem.ts: This interface describes the structure of a ToDo item, which is used to interact with the database.
+You should see the messages "Server is running on port 3000" and "Connected to MongoDB" if the application is initialized correctly.
+
+6. Open your web browser and visit http://localhost:3000/ to access the front-end of the application.
+
+
+<!-- ## Key Components -->
+
 
 ## MONGO_CONNECTION_STRING
 
@@ -42,23 +55,32 @@ You should see the messages "Gurrus says hello from port 3000" and "Connected to
 
 ## Dependencies
 
-The project uses the following dependencies:
+The project utilizes the following dependencies:
 
-    express: A fast, unopinionated, minimalist web framework for Node.js.
-
-    mongoose: A MongoDB object modeling tool designed to work in an asynchronous environment.
-
-    body-parser: A middleware to parse incoming request bodies in a middleware before the handlers.
+    dotenv: Loads environment variables from a .env file into process.env.
+    mongoose: MongoDB object modeling tool designed to work in an asynchronous environment.
+    body-parser: Middleware to parse incoming request bodies in a middleware before the handlers.
+    @types/dotenv: Type definitions for the dotenv package.
+    @types/mongoose: Type definitions for the mongoose package.
+    path: Provides utilities for working with file and directory paths.
 
 ## Development Dependencies
 
-The project uses the following devDependencies:
+The project uses the following development dependencies:
 
-    typescript: A superset of JavaScript that compiles to clean JavaScript output.
-
-    jest: A testing framework for JavaScript projects.
-
-    ts-jest: A TypeScript preprocessor for Jest.
+    @babel/core: Babel compiler core package.
+    @babel/preset-env: Babel preset for compiling modern JavaScript down to a version that is compatible with specified browser environments.
+    @babel/preset-typescript: Babel preset for TypeScript.
+    @types/express: Type definitions for the Express.js library.
+    @types/jest: Type definitions for Jest.
+    @types/supertest: Type definitions for Supertest.
+    babel-jest: Jest transformer for Babel.
+    express: Fast, unopinionated, minimalist web framework for Node.js.
+    jest: JavaScript testing framework.
+    supertest: Super-agent driven library for testing HTTP servers.
+    ts-jest: Jest transformer with TypeScript support.
+    ts-node: TypeScript execution and REPL for Node.js.
+    typescript: TypeScript language compiler.
 
 ## Testing
 
@@ -81,6 +103,8 @@ This project is licensed under the MIT License.
 
 
 Happy ToDoListing! 🚀
+
+
 
 
 

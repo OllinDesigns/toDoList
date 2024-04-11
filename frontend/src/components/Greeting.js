@@ -12,7 +12,11 @@ function Greeting() {
        
       </p>
       <p>Click the link beside to go to the Todo List: 
-      <a href="http://localhost:3000/todolist">todoList React</a>
+      <a href="http://localhost:3000/todolist"> todoList React</a>
+        </p>
+
+        <p>Click the link beside to sign up: 
+      <a href="http://localhost:3000/signup"> Sign Up</a>
         </p>
     </div>
   );
