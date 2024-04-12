@@ -87,3 +87,7 @@ body {
   #formbody h1 {
     font-family: Roboto, sans-serif;
   }
+
+  ul {
+    width: 100%;
+  }

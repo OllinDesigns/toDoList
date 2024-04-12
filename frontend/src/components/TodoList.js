@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './TodoList.css';
+// import './TodoList.css';
 
 function TodoList() {
   const [todos, setTodos] = useState([]);
@@ -48,14 +48,14 @@ function TodoList() {
   };
 
   return (
-    <div id="todo-list-container" className="todo-list-container">
+    <div id="formbody" className="todo-list-container">
       <h2>Todo List</h2>
       <input type="text" value={newTodo} onChange={(e) => setNewTodo(e.target.value)} />
       <button onClick={handleCreateTodo}>Add Todo</button>
-      <ul className="todo-list">
+      <ul>
         {todos.map(todo => (
           <li key={todo._id} className="todo-item">
-            <span style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}>{todo.item}</span>
+            <span id="tasktext" style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}>{todo.item}</span>
             <button onClick={() => handleDeleteTodo(todo._id)}>Delete</button>
             <input type="checkbox" id={`complete-${todo._id}`} checked={todo.completed} onChange={(e) => handleToggleComplete(todo._id, e.target.checked)} />
             <label htmlFor={`complete-${todo._id}`}>Complete</label>

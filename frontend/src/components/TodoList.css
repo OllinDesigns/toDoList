@@ -17,6 +17,11 @@ a {
   align-items: center;
   justify-content: center;
   min-height: 100vh; /* Ensure full viewport height */
+  background: blue;
+}
+
+.todo-list-container ul{
+  margin-left: -40px;
 }
 
 /* TodoList.css */
@@ -34,28 +39,33 @@ a {
     align-items: center; /* Align items vertically */
     justify-content: space-between; /* Space items evenly horizontally */
     margin-bottom: 10px; /* Add margin between items */
+    background: #16181e;
   }
-  
+
   /* Style for task text */
   .todo-item span {
-    flex: 1; /* Allow the text to take up remaining space */
+    flex: 1; 
+    width: 50%;
   }
   
   /* Style for delete button */
   .todo-item button {
-    margin-right: 10px; /* Add margin to separate button from text */
-    background-color: #42357b; /* Button color */
+    margin-right: 5px; /* Add margin to separate button from text */
+    /* background-color: #42357b; Button color */
     color: white; /* Button text color */
     border: none;
     border-radius: 5px;
     padding: 5px 10px;
     cursor: pointer;
+    margin-bottom: 15px;
+    margin-left: 25px;
   }
   
   /* Style for checkbox and label */
   .todo-item input[type="checkbox"] {
     margin-right: 5px; /* Add margin to separate checkbox from label */
   }
+
   
   /* Style for label */
   .todo-item label {
@@ -65,15 +75,20 @@ a {
 /* Button styles */
 button {
 
-  background-color: #634fb9; 
+  /* background-color: #634fb9;  */
   color: white; 
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  /* margin-left: 20px; */
 }
 
 /* Button hover styles */
 button:hover {
   background-color: #42357b; 
+}
+
+#tasktext {
+  width: 50%;
 }
